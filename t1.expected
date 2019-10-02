@@ -1,0 +1,23 @@
+program
+  int X,Y,XY;
+begin
+  input X;
+  Y:=0;
+  input XY;
+  output XY;
+  Y:=Y+XY;
+  X:=X-1;
+  while 0<X begin
+    input XY;
+    output XY;
+    Y:=Y+XY;
+    X:=X-1;
+  endwhile;
+  output Y;
+end
+7
+-4
+10
+5
+-9
+9

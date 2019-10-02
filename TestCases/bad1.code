@@ -1,0 +1,5 @@
+prog%ram
+ int x;
+begin 
+ x:=1;
+end
