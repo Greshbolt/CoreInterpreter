@@ -22,11 +22,12 @@ class CaseLine:
         self.caseLineFollow = CaseLineFollow()
         self.caseLineFollow.parse()
     def print(self):
+
         self.const.print()
-        self.constList.print()
-        print(' : ')
+        if self.constList is not None:
+            self.constList.print()
+        print(':', end='')
         self.expr.print()
-        print('\n')
         self.caseLineFollow.print()
     def exec(self, caseId):
         if self.const.exec() == caseId.getValue():

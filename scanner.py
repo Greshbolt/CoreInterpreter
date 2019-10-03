@@ -1,11 +1,10 @@
-import sys
 class Scanner:
     def __init__(self, codeFile, dataFile):
         self.code = codeFile
         self.data = dataFile
         self.tokenList = []
         self.idDict = {}
-        self.symbols = [',',';','!','(',')','=','+','-','*']
+        self.symbols = [',',';','!','(',')','=','+','-','*','|']
         self.tokenSwitcher = {
             'program': 'PROGRAM',
             'begin': 'BEGIN',

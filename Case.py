@@ -21,12 +21,20 @@ class Case:
         TokList.match('END','case')
         TokList.match('SEMICOLON','case')
     def print(self):
-        print('case ')
+        TokList.printIndent()
+        print('case ', end='')
         self.id.print()
-        print(' of\n')
+        print(' of')
+        TokList.increaseIndent()
+        TokList.printIndent()
         self.case_line.print()
-        print('else ')
+        print()
+        TokList.printIndent()
+        print('else ', end='')
         self.expr.print()
+        print()
+        TokList.decreaseIndent()
+        TokList.printIndent()
         print('end;')
     def exec(self):
         if not (self.case_line.exec(self.id)):

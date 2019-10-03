@@ -13,7 +13,7 @@ class ConstList:
             self.constList = ConstList()
             self.constList.parse()
     def print(self):
-        print(', ')
+        print(',', end='')
         self.const.print()
         if self.constList is not None:
             self.constList.print()

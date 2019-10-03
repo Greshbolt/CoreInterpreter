@@ -1,6 +1,7 @@
 from program import Program
 from Tokenizer import TokList
-TokList.getFiles('bad2.code','bad5.data')
+import sys
+TokList.getFiles(sys.argv[1],sys.argv[2])
 p = Program()
 p.parse()
 p.print()

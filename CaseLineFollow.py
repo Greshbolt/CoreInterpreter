@@ -11,7 +11,9 @@ class CaseLineFollow:
         self.caseLine.parse()
     def print(self):
         if self.caseLine is not None:
-            print('\n| ')
+            print()
+            TokList.printIndent()
+            print('|', end='')
             self.caseLine.print()
     def exec(self, caseId):
         if self.caseLine is not None:
