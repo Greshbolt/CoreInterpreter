@@ -1,0 +1,10 @@
+program
+  int x;
+begin
+  x := 1;
+end
+program
+  int x;
+begin
+  x := 1;
+end

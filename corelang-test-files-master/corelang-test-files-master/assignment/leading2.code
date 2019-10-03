@@ -1,0 +1,6 @@
+program
+  int i;
+begin
+  i:=0-00001849;
+  output i;
+end

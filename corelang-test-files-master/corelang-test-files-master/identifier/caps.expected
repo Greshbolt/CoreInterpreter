@@ -1,0 +1,6 @@
+program
+  int ALL,CAPS;
+begin
+  ALL:=3;
+  CAPS:=4;
+end

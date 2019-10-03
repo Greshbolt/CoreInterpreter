@@ -1,0 +1,11 @@
+program
+  int b;
+begin
+  b:=1;
+  if b=1 then
+    output b;
+  else
+    b:=2;
+    output b;
+  endif;
+end

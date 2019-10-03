@@ -1,0 +1,12 @@
+program
+  int b;
+begin
+  b:=1;
+  if b=2 then
+    output b;
+  else
+    b:=3;
+    output b;
+  endif;
+end
+3

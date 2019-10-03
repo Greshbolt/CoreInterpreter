@@ -12,7 +12,9 @@ class DeclSeq:
         self.decl_seq = DeclSeq()
         self.decl_seq.parse()
     def print(self):
+        TokList.printIndent()
         self.decl.print()
+        print(';')
         if self.decl_seq is not None:
             self.decl_seq.print()
     def exec(self):

@@ -1,0 +1,13 @@
+program
+  int b;
+begin
+  b:=1;
+  if b=1 then
+    output b;
+    if b=1 then
+      b:=2;
+      output b;
+    endif;
+    output b;
+  endif;
+end

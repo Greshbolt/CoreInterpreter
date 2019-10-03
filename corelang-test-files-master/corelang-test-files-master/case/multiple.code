@@ -1,0 +1,11 @@
+program
+  int x;
+begin
+  input x;
+  case x of
+      1 : 2
+    | 1 : 3
+    else 4
+  end;
+  output x;
+end

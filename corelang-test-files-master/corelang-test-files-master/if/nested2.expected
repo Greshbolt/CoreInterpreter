@@ -1,0 +1,22 @@
+program
+  int b;
+begin
+  b:=1;
+  if b=1 then
+    output b;
+    if b=2 then
+      b:=2;
+      output b;
+    else
+      b:=3;
+      output b;
+    endif;
+    output b;
+  else
+    b:=4;
+    output b;
+  endif;
+end
+1
+3
+3

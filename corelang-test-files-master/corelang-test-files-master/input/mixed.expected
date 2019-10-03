@@ -1,0 +1,9 @@
+program
+  int x;
+begin
+  input x;
+  input x;
+  input x;
+  output x;
+end
+58

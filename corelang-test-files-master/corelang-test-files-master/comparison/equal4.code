@@ -1,0 +1,7 @@
+program
+  int x;
+begin
+  if 984=948 then
+    output 1;
+  endif;
+end

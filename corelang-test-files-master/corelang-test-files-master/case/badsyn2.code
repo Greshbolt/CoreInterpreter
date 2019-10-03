@@ -1,0 +1,9 @@
+program
+  int x;
+begin
+  input x;
+  case x of
+    0 : 2
+  end;
+  output x;
+end

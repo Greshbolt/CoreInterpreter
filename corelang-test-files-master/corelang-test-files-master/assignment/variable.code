@@ -1,0 +1,7 @@
+program
+  int x, y;
+begin
+  x := 35;
+  y := x;
+  output y;
+end

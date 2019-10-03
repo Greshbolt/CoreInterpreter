@@ -1,0 +1,7 @@
+program
+  int B;
+begin
+  B:=2*3-4;
+  output B;
+end
+2

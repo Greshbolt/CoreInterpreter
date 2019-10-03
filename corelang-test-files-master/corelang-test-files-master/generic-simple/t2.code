@@ -1,0 +1,19 @@
+ program int AbC,D;int F;
+
+          begin input AbC; input 
+	F;D:=F;	
+
+	if D< AbC then AbC:= 
+                                                      AbC - D;
+                                     else D := D - AbC;
+
+                                endif;
+
+               while !(AbC=D) begin if D < AbC then AbC:= 
+                                                      AbC - D;
+                                     else D := D - AbC;
+
+                                endif;endwhile;output D;end
+
+   
+

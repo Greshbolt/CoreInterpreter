@@ -1,0 +1,12 @@
+program
+  int x;
+begin
+  input x;
+  case x of
+    0,42,5,36,8:2
+    |2,53,23,57:3
+    else 4
+  end;
+  output x;
+end
+3

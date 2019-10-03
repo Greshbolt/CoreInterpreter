@@ -1,0 +1,5 @@
+program
+  int int, case, begin, end;
+begin
+  int := 7;
+end

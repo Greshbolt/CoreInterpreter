@@ -1,0 +1,21 @@
+program
+  int X1,X4;
+  int X2,X3,X7;
+begin
+  X1:=0;
+  X2:=1;
+  X3:=1;
+  input X4;
+  X7:=X2+X3;
+  X2:=X3;
+  X3:=X7;
+  X1:=X1+1;
+  while X1<X4 begin
+    X7:=X2+X3;
+    X2:=X3;
+    X3:=X7;
+    X1:=X1+1;
+  endwhile;
+  output X2;
+end
+8

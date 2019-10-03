@@ -1,0 +1,5 @@
+program
+  int my_variable;
+begin
+  my_variable := 1;
+end

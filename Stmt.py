@@ -40,7 +40,8 @@ class Stmt:
             self.s6 = Case()
             self.s6.parse()
         else:
-            print('ERROR: Syntax error')
+            TokList.match('', 'statement')
+            print('ERROR: Not a known stmt format')
             exit()
         
     def print(self):
@@ -57,5 +58,16 @@ class Stmt:
         elif self.altNo == 6:
             self.s6.print()
     def exec(self):
-        pass
+        if self.altNo == 1:
+            self.s1.exec()
+        elif self.altNo == 2:
+            self.s2.exec()
+        elif self.altNo == 3:
+            self.s3.exec()
+        elif self.altNo == 4:
+            self.s4.exec()
+        elif self.altNo == 5:
+            self.s5.exec()
+        elif self.altNo == 6:
+            self.s6.exec()
         

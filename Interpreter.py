@@ -1,6 +1,8 @@
 from program import Program
 from Tokenizer import TokList
-TokList.getFiles('t1.code','t1.data')
-print(TokList.currentToken())
-print(TokList.idDict)
-print(TokList.tokenList)
+TokList.getFiles('bad2.code','bad5.data')
+p = Program()
+p.parse()
+p.print()
+p.exec()
+

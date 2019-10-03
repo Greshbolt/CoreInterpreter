@@ -1,0 +1,7 @@
+program
+  int A;
+begin
+  A:=248+3;
+  output A;
+end
+251

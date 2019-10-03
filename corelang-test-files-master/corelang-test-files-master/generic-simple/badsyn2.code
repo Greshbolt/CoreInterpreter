@@ -1,0 +1,4 @@
+program
+ int x;
+begin 
+ x:=1;

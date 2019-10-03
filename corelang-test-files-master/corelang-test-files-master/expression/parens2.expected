@@ -1,0 +1,7 @@
+program
+  int A;
+begin
+  A:=((((((((((((((((1))))))))))))))));
+  output A;
+end
+1

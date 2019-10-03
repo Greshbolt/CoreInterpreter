@@ -1,0 +1,5 @@
+program
+  int numb3rs, r, c00l;
+begin
+  numb3rs := 3;
+end

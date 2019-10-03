@@ -1,0 +1,9 @@
+program
+  int x,y;
+begin
+  x:=35;
+  y:=x;
+  x:=411;
+  output y;
+end
+35

@@ -1,0 +1,8 @@
+program
+  int b;
+begin
+  b:=1;
+  if b=1
+    output b;
+  endif;
+end

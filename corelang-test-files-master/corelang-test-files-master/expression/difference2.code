@@ -1,0 +1,6 @@
+program
+  int A;
+begin
+  A := 3 - 248;
+  output A;
+end

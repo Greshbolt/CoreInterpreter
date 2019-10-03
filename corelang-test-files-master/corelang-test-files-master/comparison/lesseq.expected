@@ -1,0 +1,9 @@
+program
+  int x;
+begin
+  x:=0;
+  if x<=0 then
+    output x;
+  endif;
+end
+0

@@ -1,0 +1,5 @@
+program
+  int 9myvariable;
+begin
+  9myvariable := 1;
+end

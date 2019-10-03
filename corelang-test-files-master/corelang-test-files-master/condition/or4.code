@@ -1,0 +1,8 @@
+program
+  int x;
+begin
+  x:=0;
+  if 1=x or 0=x then
+    output x;
+  endif;
+end

@@ -7,7 +7,7 @@ class StmtSeq:
     def parse(self):
         self.stmt = Stmt()
         self.stmt.parse()
-        if TokList.checkTok('END'):
+        if TokList.checkTok('END') or TokList.checkTok('ELSE') or TokList.checkTok('ENDIF') or TokList.checkTok('ENDWHILE'):
             return
         self.stmt_seq = StmtSeq()
         self.stmt_seq.parse()
@@ -16,4 +16,6 @@ class StmtSeq:
         if self.stmt_seq is not None:
            self.stmt_seq.print()
     def exec(self):
-        pass 
+        self.stmt.exec()
+        if self.stmt_seq is not None:
+            self.stmt_seq.exec()

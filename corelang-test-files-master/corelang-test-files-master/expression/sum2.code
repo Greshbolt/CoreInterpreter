@@ -1,0 +1,6 @@
+program
+  int A;
+begin
+  A := 248 + 3 + 3 + 85 + 425;
+  output A;
+end

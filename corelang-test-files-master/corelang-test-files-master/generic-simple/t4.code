@@ -1,0 +1,7 @@
+		program 
+ int	
+x ,y, z;
+begin input x,y;z:=x;x :=y;y:=
+z;output
+x;output 
+y ;	end 	 
