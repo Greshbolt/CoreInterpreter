@@ -1,6 +1,0 @@
-program
- int x;
-begin 
- if[x<5
- then x:=1; endif;
-end

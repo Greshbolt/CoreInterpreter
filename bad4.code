@@ -1,6 +1,0 @@
-program
- int y;
-begin 
- x:=1;
-end
-

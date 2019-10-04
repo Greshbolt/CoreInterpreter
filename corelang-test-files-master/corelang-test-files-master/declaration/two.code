@@ -1,5 +1,0 @@
-program
-  int x, y;
-begin
-  x := 2;
-end

@@ -1,7 +1,0 @@
-program
-  int x;
-begin
-  input x;
-  output x;
-end
-234

@@ -5,6 +5,7 @@ class Cond:
         self.cmpr = None
         self.cond = None
         self.notStr = None
+    #Simple parsing to determine type of conditional
     def parse(self):
         if TokList.checkTok('NOT'):
             self.notStr = '!'
@@ -20,6 +21,7 @@ class Cond:
             TokList.nextToken()
             self.cond = Cond()
             self.cond.parse()
+    #Printing based on parsing
     def print(self):
         if self.notStr is not None:
             print(self.notStr+'(', end='')
@@ -27,9 +29,11 @@ class Cond:
             print(')', end='')
         elif self.cmpr is not None and self.cond is not None:
             self.cmpr.print()
+            print(' or ', end='')
             self.cond.print()
         else:
             self.cmpr.print()
+    #Execution statement that retruns a boolean depending on parse results
     def exec(self):
         if self.notStr is not None:
             return not self.cond.exec()

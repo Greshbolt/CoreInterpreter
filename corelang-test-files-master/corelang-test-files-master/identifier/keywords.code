@@ -1,5 +1,0 @@
-program
-  int programend;
-begin
-  programend := 7;
-end

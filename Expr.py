@@ -5,6 +5,7 @@ class Expr:
         self.term = None
         self.expr = None
         self.plusOrMinus = ''
+    #Parsing for Expression that checks for plus, minus, or no calculations
     def parse(self):
         self.term = Term()
         self.term.parse()
@@ -18,6 +19,7 @@ class Expr:
             self.plusOrMinus = '-'
             self.expr = Expr()
             self.expr.parse()
+    #Simple print statement
     def print(self):
         self.term.print()
         if '+' in self.plusOrMinus:
@@ -26,6 +28,7 @@ class Expr:
         elif '-' in self.plusOrMinus:
             print(self.plusOrMinus, end='')
             self.expr.print()
+    #Simple execute statement that returns a value based on parsing
     def exec(self):
         if not self.plusOrMinus:
             return self.term.exec()
@@ -33,4 +36,3 @@ class Expr:
             return self.term.exec() + self.expr.exec()
         elif '-' in self.plusOrMinus:
             return self.term.exec() - self.expr.exec()
-        return 0

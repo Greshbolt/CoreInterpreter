@@ -1,6 +1,0 @@
-program
-  int B;
-begin
-  B := (7 - 1) * (2 + 48);
-  output B;
-end

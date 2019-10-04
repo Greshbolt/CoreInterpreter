@@ -1,5 +1,0 @@
-program
-  int hidden0case0keyword;
-begin
-  hidden0case0keyword := 3;
-end

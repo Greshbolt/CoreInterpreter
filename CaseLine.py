@@ -9,6 +9,7 @@ class CaseLine:
         self.constList = None
         self.expr = None
         self.caseLineFollow = None
+    #Parsing for CaseLine based on the homework
     def parse(self):
         self.const = Const()
         self.const.parse(TokList.getIdOrConst())
@@ -21,14 +22,15 @@ class CaseLine:
         self.expr.parse()
         self.caseLineFollow = CaseLineFollow()
         self.caseLineFollow.parse()
+    #Simple printing
     def print(self):
-
         self.const.print()
         if self.constList is not None:
             self.constList.print()
         print(':', end='')
         self.expr.print()
         self.caseLineFollow.print()
+    #Exectuion that returns a boolean based on idValue and constants given
     def exec(self, caseId):
         if self.const.exec() == caseId.getValue():
             caseId.setValue(self.expr.exec())

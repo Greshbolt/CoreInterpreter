@@ -1,6 +1,0 @@
-program
- int x,y;
-begin 
- input x;
- x:=y;
-end

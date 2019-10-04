@@ -1,6 +1,0 @@
-program
-  int i;
-begin
-  i:=0-1849;
-  output i;
-end

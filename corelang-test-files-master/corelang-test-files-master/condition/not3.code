@@ -1,8 +1,0 @@
-program
-  int x;
-begin
-  x:=0;
-  if !(1=x) then
-    output x;
-  endif;
-end

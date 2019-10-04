@@ -1,8 +1,0 @@
-program
-  int x, X;
-begin
-  x := 3;
-  X := 4;
-  output x;
-  output X;
-end

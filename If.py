@@ -6,6 +6,7 @@ class If:
         self.cond = None
         self.stmt_seq_then = None
         self.stmt_seq_else = None
+    #Parsing to determine whether the if statement is an if then or an if then else
     def parse(self):
         TokList.match('IF', 'if')
         self.cond = Cond()
@@ -19,6 +20,7 @@ class If:
             self.stmt_seq_else.parse()
         TokList.match('ENDIF', 'if')
         TokList.match('SEMICOLON', 'if')
+    #Printing with proper indentation modification
     def print(self):
         TokList.printIndent()
         print('if ', end='')
@@ -35,6 +37,7 @@ class If:
         TokList.decreaseIndent()
         TokList.printIndent()
         print('endif;')
+    #Executing statements based on conditionals
     def exec(self):
         if self.cond.exec():
             self.stmt_seq_then.exec()

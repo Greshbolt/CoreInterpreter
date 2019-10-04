@@ -14,6 +14,7 @@ class Stmt:
         self.s4 = None
         self.s5 = None
         self.s6 = None
+    #Similar to algorithm in class, checks for type of statement and assigns an altNo based on that, if none are recognized it reports an error
     def parse(self):
         if TokList.checkTok('ID'):
             self.altNo = 1
@@ -40,10 +41,9 @@ class Stmt:
             self.s6 = Case()
             self.s6.parse()
         else:
+            #Used to briefly check for and EOF exception
             TokList.match('', 'statement')
-            print('ERROR: Not a known stmt format')
-            exit()
-        
+    #Simple printing using the altNo
     def print(self):
         if self.altNo == 1:
             self.s1.print()
@@ -57,6 +57,7 @@ class Stmt:
             self.s5.print()
         elif self.altNo == 6:
             self.s6.print()
+    #Simple execution based on altNo evaluation
     def exec(self):
         if self.altNo == 1:
             self.s1.exec()

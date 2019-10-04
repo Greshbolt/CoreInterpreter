@@ -4,7 +4,9 @@ class Scanner:
         self.data = dataFile
         self.tokenList = []
         self.idDict = {}
+        #Symbols for long string parsing
         self.symbols = [',',';','!','(',')','=','+','-','*','|']
+        #Keywords to tokens dictionary
         self.tokenSwitcher = {
             'program': 'PROGRAM',
             'begin': 'BEGIN',
@@ -37,20 +39,26 @@ class Scanner:
             '-': 'MINUS',
             '*': 'MULT',
         }
+    #This is used to generate the tokens using the keyword dictionary
+    #It checks whether something is a keyword, otherwise it is a const, id, or longer string
     def TokenGenerator(self, tokenString):
         token = [self.tokenSwitcher.get(tokenString,"n/a")]
         if token[0] == 'n/a' and tokenString.isnumeric():
             token = [f'CONST[{tokenString}]']
         elif token[0] == 'n/a' and not tokenString[0].isnumeric() and tokenString.isalnum():
             token = [f'ID[{tokenString}]']
-            self.idDict[str(tokenString)] = 'null'
+            #Adds any Ids that it finds into a dictionary initialized as none for future use
+            self.idDict[str(tokenString)] = None
         elif token[0] == 'n/a':
             token = self.checkForKeyword(tokenString)
         return token
+    #This is what parses the longer strings into either tokens for keywords, ids, constants, or improper syntax
     def checkForKeyword(self, tokenString):
         token = []
+        #For recursive exiting
         if len(tokenString) == 0 :
             return token
+        #Where all the checking and recursive calls occur.  Follows algorithm in slides
         if tokenString[0] in self.symbols:
             token = self.TokenGenerator(tokenString[0])
             token.extend(self.checkForKeyword(tokenString[1:]))
@@ -77,7 +85,8 @@ class Scanner:
                 temptok = temptok+x
                 counter+=1
             if self.tokenSwitcher.get(temptok,'n/a') == 'n/a':
-                self.idDict[str(temptok)] = 'null'
+                #Adds any Ids that it finds into a dictionary initialized as none for future use
+                self.idDict[str(temptok)] = None
                 token.append(f'ID[{temptok}]')
                 token.extend(self.checkForKeyword(tokenString[counter:]))
             else:
@@ -97,20 +106,37 @@ class Scanner:
             print('ERROR: Unknown format')
             exit()
         return token
+    #Used for checking if numbers are ints
+    def representsInt(self, s):
+        if s[0] == '-':
+            return s[1:].isnumeric()
+        return s.isnumeric()
+    #Used to generate the Data List
     def generateDataList(self):
+        #Opens data file for reading
         data=open(f'{self.data}','r')
         dataContents = data.read()
+        #Splits whitespace for just tokens
         dataContentsSplit = dataContents.split()
-        if not any(dat.isnumeric() for dat in dataContentsSplit):
-            print('ERROR: Data file is corrupt')
+        dataList = []
+        #Iterates through data file to search for non integers
+        for dat in dataContentsSplit:
+            if not self.representsInt(dat):
+                print('ERROR: Data file is corrupt')
+                exit()
+            dataList.append(int(dat))
         data.close()
-        return dataContentsSplit
+        return dataList
+    #Used to generate the token list
     def generateTokenList(self):
+        #Opens code file for reading
         code=open(f'{self.code}','r')
         codeContents = code.read()
         codeContentsSplit = codeContents.split()
+        #Adds EOF to end of split
         codeContentsSplit.append('EOF')
         scannerList = []
+        #Iterates through code file to create tokens
         for token in codeContentsSplit:
             temp = self.TokenGenerator(token)
             scannerList.extend(temp)

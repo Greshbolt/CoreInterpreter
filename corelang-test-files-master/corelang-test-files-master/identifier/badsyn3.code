@@ -1,5 +1,0 @@
-program
-  int my-variable;
-begin
-  my-variable := 1;
-end
