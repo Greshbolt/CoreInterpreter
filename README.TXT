@@ -39,11 +39,16 @@ Files Submitting:
     Tokenizer.py - Is a globally accessed class which contains a dictionary of Ids,
         list of tokens, and list of data integers.  Contains functions to manipulate 
         each of these values as well as access them as well as indentation functionalities
+
 Instructions for running:
+    These instructions operate under the assumption that the user already has python3 installed
+    in their environment.  If this is not the case then enter the following command:
+                        subscribe PYTHON-3
     Make sure that all the files (including those provided in the command line) are in
     the same folder.  Once this is complete enter the following command:
                         python3 ./Interpreter.py {file.code} {file.data}
     Where both {file.code} and {file.data} are replaced by your respective .code and .data
     files.
+    
 Special features or comments:
     None

@@ -1,0 +1,37 @@
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+                                Jonathan Karkour
+Description:
+    The overal design of the interpreter was built around having a class for each
+    token in the core grammar.  Each of these classes have a parse, print, and 
+    exec function that are recursively called by their parent token.  The parse
+    tree representation took an object oriented approach by having each class
+    build a parse tree recursively by calling their respective parse functions.
+    The scanner and parser in this program are independent of each other and
+    only interact through the lists that the scanner outputs.  The process for 
+    my interpreter is as follows: Scanner->Tokenizer->Parser.  The Tokenizer
+    calls the scanner to recieve the list of tokens that the scanner has parsed
+    through and each parser of every class calls upon the Tokenizer global class
+    to access the token list and data list.  The Tokenizer class has various methods
+    used to access both lists but after the scanner is called it is never referenced 
+    again in the Tokenizer.  In conlcusion the scanner runs once to generate two lists
+    and the Tokenizer stores those lists.  The parsers then interact directly with the 
+    tokenizer to access the lists, inspect their properites, and iterate through them.
+
+Testing description:
+    The interpreter testing used various methods, but primarily surrounded around
+    improper code files, improper data files, scanning through proper but messy code files,
+    different but proper data files, correctly printing fringe cases, and correctly 
+    executing fring cases.  Each of these cases were tested by running both .code and
+    .data files and modifying them for their respective test case.  These different 
+    files were both provided by the professor (or other students) or created for 
+    cases which I believed were not covered.
+
+    Known remaining bugs:
+        So far I have managed to fix every test that was incorrect, but knowing 
+        how programming works I can, with 100% confidence, say that there are still
+        bugs just ones that I don't know about.
+
+Borrowed Ideas:
+    -Borrowed the test cases distributed on piazza
+    -Borrowed idea of case statement implementation from homework 2
+    -Borrowed idea for design based on slides in class
